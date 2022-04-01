@@ -1,3 +1,17 @@
+<?php 
+session_start();
+
+
+if(isset($_SESSION['key'])){
+    if($_SESSION['key'] == 'user'){
+        header("Location: user/");
+    }else{
+        header("Location: hairdresser/");
+    }
+
+}
+?>
+
 <!DOCTYPE html>
 <!-- Created By CodingNepal -->
 <html lang="en" dir="ltr">
