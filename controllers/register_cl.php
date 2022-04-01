@@ -22,11 +22,11 @@ if(isset($_POST['key']) && $_POST['key'] == 'form-signup'){
         $sql_insert = "INSERT INTO `user` (`id_user`, `name_user`, `lastname_user`, `tel_user`, `pass_user`, `e_mail`) VALUES 
                                         (NULL, '$name_user', '$lastname_user', '$tel_user', '$pass_user', '$e_mail');";
 
-        if(Database::query($sql_insert)){
-            echo "success";
-        }else{
-            echo "error";
-        }
+    if(Database::query($sql_insert)){
+        echo "success";
+    }else{
+        echo "error";
+    }
     }else{
         echo "x541";
     }
@@ -36,3 +36,5 @@ if(isset($_POST['key']) && $_POST['key'] == 'form-signup'){
     
 
 }
+
+?>

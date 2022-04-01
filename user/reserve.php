@@ -11,6 +11,7 @@ date_default_timezone_set("Asia/Bangkok");
         var date = new Date();
 
         var calendar = new FullCalendar.Calendar(calendarEl, {
+            timeZone: 'Asia/Bangkok',
             dateClick: function(info) {
                 // alert('Date: ' + info.dateStr);
                 // alert('Resource ID: ' + info.resource.id);
