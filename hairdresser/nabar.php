@@ -60,7 +60,7 @@ if(isset($_SESSION['key'])){
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">ลูกค้าชื่อ </span>
+                    <span class="name">ร้านหมอกตัดผม </span>
                 </div>
             </div>
 

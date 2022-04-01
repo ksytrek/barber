@@ -1,10 +1,12 @@
 <?php
 include_once("./nabar.php");
 ?>
+
 <section class="home">
-    <div class="text">จัดการบริการ</div>
-    <div class="container" style="background-color:ghostwhite;padding: 10px">
-        <!-- <span style="color:red">* กรุณายกเลิกบริการก่อนเวลา 1 ชั่วโมง * </span> -->
+    <div class="text">
+        จัดการข้อมูลช่าง
+    </div>
+    <div class="container">
         <table class="table table-striped " id="example">
             <thead>
                 <tr>
@@ -46,10 +48,8 @@ include_once("./nabar.php");
                 ?>
             </tbody>
         </table>
-
     </div>
 </section>
-
 <div class="modal fade" id="add_services" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -84,76 +84,10 @@ include_once("./nabar.php");
 </div>
 
 <script>
-    $("#form-addServices").submit(function() {
-        // alert("sldfj")
-        // var inputs = $("#form-addServices : input");
-        var $inputs = $("#form-addServices :input");
-        var values = {};
-        $inputs.each(function() {
-            values[this.name] = $(this).val();
-        })
-        console.log(values);
-        $.ajax({
-            url: "./controller/services.php",
-            type: "POST",
-            data: {
-                key: "form-addServices",
-                data: values,
-            },
-            success: function(result, textStatus, jqXHR) {
-                console.log(result);
-                if (result == "success") {
-                    alert("เพิ่มบริการสำเร็จ");
-                    location.reload();
-                } else {
-                    alert("เพิ่มบริการไม่สำเร็จ");
-                    location.reload();
-
-                }
-
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                alert("เพิ่มบริการไม่สำเร็จ");
-                location.reload();
-            }
-        });
-
-    });
-
-    function delete_services(id) {
-        if(confirm('Are you sure you want to delete')){
-            $.ajax({
-                url : "./controller/services.php",
-                type : "POST",
-                data : {
-                    key : "delete_services",
-                    id : id
-                },
-                success : function(result, textStatus , status){
-                    // alert(result);
-                    if(result == "success"){
-                        alert("ลบบริการสำเร็จ")
-                        location.reload();
-                    }else{
-                        alert("ลบบริการไม่สำเร็จ")
-                        location.reload();
-                    }
-                },error : function(result, textStatus){
-
-                }
-            });
-        }
-    }
-
-    function link(id){
-        location.assign('edit_ser?id='+id);
-    }
-</script>
-<script>
     $(document).ready(function() {
         $("#example").DataTable();
     });
 </script>
 <?php
-include_once("./footer.php");
+include_once("./footer.php")
 ?>

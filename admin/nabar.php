@@ -60,7 +60,7 @@ if(isset($_SESSION['key'])){
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">ลูกค้าชื่อ </span>
+                    <span class="name">ร้านหมอกตัดผม </span>
                 </div>
             </div>
 
@@ -77,21 +77,21 @@ if(isset($_SESSION['key'])){
                         </a>
                     </li>
 
-                    <!-- <li class="">
-                        <a href="./reserve_mg">
+                    <li class="">
+                        <a href="./hairdresser_mg">
                             <i class='bx bx-pie-chart-alt icon'></i>
-                            <span class="text nav-text">จัดการ</span>
+                            <span class="text nav-text">จัดการข้อมูลช่าง</span>
 
                         </a>
-                    </li> -->
+                    </li>
 
 
-                    <!-- <li class="">
-                        <a href="">
+                    <li class="">
+                        <a href="./member_mg">
                             <i class='bx bx-notepad icon '></i>
-                            <span class="text nav-text">จัดการช่าง</span>
+                            <span class="text nav-text">จัดการข้อมูลลูกค้า</span>
                         </a>
-                    </li> -->
+                    </li>
 
                 </ul>
             </div>
