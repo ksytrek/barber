@@ -29,7 +29,7 @@ if (isset($_POST['key']) && $_POST['key'] == 'form-reserve') {
             foreach ($show_tebelig  as $row) {
 
                 $new_row = [
-                    "title" => '',
+                    "title" => $row['name_style'],
                     "start" => $row['data_start'],
                     "end" => $row['data_end'],
                 ];
@@ -50,6 +50,21 @@ if (isset($_POST['key']) && $_POST['key'] == 'form-reserve') {
 
         echo "success";
     } else {
+        echo "error";
+    }
+}
+
+
+if (isset($_POST['key']) && $_POST['key'] == 'delete_reserve'){
+
+    $id = $_POST['id'];
+
+
+    $sql_dete = "UPDATE `reserve` SET `status` = '0' WHERE `reserve`.`id_reserve` = '$id'";
+
+    if(Database::query($sql_dete)){
+        echo "success";
+    }else{
         echo "error";
     }
 }

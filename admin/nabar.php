@@ -5,12 +5,11 @@ session_start();
 
 $ID = null;
 if(isset($_SESSION['key'])){
-    if($_SESSION['key'] == 'admin'){
-        header("Location: ../admin/");
+    if($_SESSION['key'] == 'user'){
+        header("Location: ../user/");
         
-    }else if($_SESSION['key'] == 'hai'){
-        header("Location: ../hairdresser/");
     }else{
+        // header("Location: hairdresser/");
         $ID = $_SESSION['id'];
     }
 
@@ -78,21 +77,21 @@ if(isset($_SESSION['key'])){
                         </a>
                     </li>
 
-                    <li class="">
+                    <!-- <li class="">
                         <a href="./reserve_mg">
                             <i class='bx bx-pie-chart-alt icon'></i>
-                            <span class="text nav-text">จัดการจองคิว</span>
+                            <span class="text nav-text">จัดการ</span>
 
                         </a>
-                    </li>
+                    </li> -->
 
 
-                    <li class="">
-                        <a href="./reserve">
+                    <!-- <li class="">
+                        <a href="">
                             <i class='bx bx-notepad icon '></i>
-                            <span class="text nav-text">จองคิว</span>
+                            <span class="text nav-text">จัดการช่าง</span>
                         </a>
-                    </li>
+                    </li> -->
 
                 </ul>
             </div>

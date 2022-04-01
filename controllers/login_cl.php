@@ -23,7 +23,6 @@ if (isset($_POST['key']) && $_POST['key'] == 'form-login') {
             $_SESSION['id'] = $row_user->id_user;
             echo "login-user";
         } else {
-
         }
     } else {
         $sql_search_hai  = "SELECT * FROM `hairdresser` WHERE tel_hai = '$tel_user' AND pass_hai = '$pass_user'";
@@ -39,9 +38,23 @@ if (isset($_POST['key']) && $_POST['key'] == 'form-login') {
             } else {
 
             }
-        }else{
-            echo "กรอกข้อมูลหรือรหัสผ่านไม่ถูกต้อง";
-        }
+        } else {
+            $sql_search_admin  = "SELECT * FROM `admin` WHERE tel_ad = '$tel_user' AND pass_ad = '$pass_user'";
+            $row_admin  = Database::query($sql_search_admin, PDO::FETCH_OBJ)->fetch(PDO::FETCH_OBJ);
+            // echo "กรอกข้อมูลหรือรหัสผ่านไม่ถูกต้อง";
 
+            if ($row_admin != null) {
+                if ($tel_user == $row_admin->tel_ad && $pass_user == $row_admin->pass_ad) {
+                    $_SESSION['name'] = $row_admin->name_ad;
+                    $_SESSION['key'] = 'admin';
+                    $_SESSION['id'] = $row_admin->id_ad;
+                    echo "login-admin";
+                } else {
+
+                }
+            } else {
+                echo "กรอกข้อมูลหรือรหัสผ่านไม่ถูกต้อง";
+            }
+        }
     }
 }

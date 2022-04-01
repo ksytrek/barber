@@ -111,6 +111,8 @@ if(isset($_SESSION['key'])){
 
                                 }else if(result == "login-hai"){
                                     location.assign("./hairdresser/")
+                                }else if(result == "login-admin"){
+                                    location.assign("./admin/")
                                 }else{
                                     alert(result);
                                 }
