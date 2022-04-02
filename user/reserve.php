@@ -106,7 +106,7 @@ date_default_timezone_set("Asia/Bangkok");
                         <select class="form-select" name="id_style">
                             <!-- <option value="0" selected>ยังไม่ตัดสินใจเลือก</option> -->
                             <?php
-                            foreach (Database::query("SELECT * FROM `hairstyle`", PDO::FETCH_OBJ) as $row) :
+                            foreach (Database::query("SELECT * FROM `hairstyle` WHERE status != 0 ", PDO::FETCH_OBJ) as $row) :
                             ?>
                                 <option value="<?php echo $row->id_style ?>"><?php echo $row->name_style ?></option>
 
@@ -121,7 +121,7 @@ date_default_timezone_set("Asia/Bangkok");
                         <select class="form-select" name="id_hai" required>
                             <option value="">กรุณาเลือกช่าง</option>
                             <?php
-                            foreach (Database::query("SELECT * FROM `hairdresser`", PDO::FETCH_OBJ) as $row) :
+                            foreach (Database::query("SELECT * FROM `hairdresser` WHERE status_hai != 0 ", PDO::FETCH_OBJ) as $row) :
                             ?>
                                 <option value="<?php echo $row->id_hai ?>"><?php echo $row->name_hai ?></option>
 

@@ -23,6 +23,7 @@ if(isset($_POST['key']) && $_POST['key'] == 'form-addServices'){
         echo "error";
     }
 }
+
 if(isset($_POST['key']) && $_POST['key'] == 'delete_services'){
 
     $id = $_POST['id'];

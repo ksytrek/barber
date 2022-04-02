@@ -69,8 +69,8 @@ if(isset($_SESSION['key'])){
         </header>
 
         <div class="menu-bar">
-            <div class="menu">
-                <ul class="menu-links">
+            <div class="bottom-content">
+                <!-- <ul class="menu-links"> -->
                     <li class="">
                         <a href="./index">
                             <i class='bx bx-home-alt icon'></i>
@@ -94,7 +94,7 @@ if(isset($_SESSION['key'])){
                         </a>
                     </li>
 
-                </ul>
+                <!-- </ul> -->
             </div>
 
             <div class="bottom-content">

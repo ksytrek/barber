@@ -12,7 +12,7 @@ if (isset($_POST['key']) && $_POST['key'] == 'form-login') {
 
     // echo $tel_user.$pass_user;
 
-    $sql_search_user = "SELECT * FROM `user` WHERE  tel_user = '$tel_user' AND pass_user = '$pass_user'";
+    $sql_search_user = "SELECT * FROM `user` WHERE  tel_user = '$tel_user' AND pass_user = '$pass_user' AND status_user != 0 ";
     $row_user = Database::query($sql_search_user, PDO::FETCH_OBJ)->fetch(PDO::FETCH_OBJ);
 
     // print_r($row_user);
@@ -25,7 +25,7 @@ if (isset($_POST['key']) && $_POST['key'] == 'form-login') {
         } else {
         }
     } else {
-        $sql_search_hai  = "SELECT * FROM `hairdresser` WHERE tel_hai = '$tel_user' AND pass_hai = '$pass_user'";
+        $sql_search_hai  = "SELECT * FROM `hairdresser` WHERE tel_hai = '$tel_user' AND pass_hai = '$pass_user' AND status_hai != 0";
         $row_hai  = Database::query($sql_search_hai, PDO::FETCH_OBJ)->fetch(PDO::FETCH_OBJ);
         // echo "กรอกข้อมูลหรือรหัสผ่านไม่ถูกต้อง";
 

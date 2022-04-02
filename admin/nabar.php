@@ -4,16 +4,14 @@ require_once("../config/config.inc.php");
 session_start();
 
 $ID = null;
-if(isset($_SESSION['key'])){
-    if($_SESSION['key'] == 'user'){
+if (isset($_SESSION['key'])) {
+    if ($_SESSION['key'] == 'user') {
         header("Location: ../user/");
-        
-    }else{
+    } else {
         // header("Location: hairdresser/");
         $ID = $_SESSION['id'];
     }
-
-}else{
+} else {
     header("Location: ../");
 }
 ?>
@@ -33,6 +31,8 @@ if(isset($_SESSION['key'])){
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- <script src="../plugins/"></script> -->
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
@@ -68,33 +68,31 @@ if(isset($_SESSION['key'])){
         </header>
 
         <div class="menu-bar">
-            <div class="menu">
-                <ul class="menu-links">
-                    <li class="">
-                        <a href="./index">
-                            <i class='bx bx-home-alt icon'></i>
-                            <span class="text nav-text">หน้าหลัก</span>
-                        </a>
-                    </li>
+            <div class="bottom-content">
+                        <li class="">
+                            <a href="./index">
+                                <i class='bx bx-home-alt icon'></i>
+                                <span class="text nav-text">หน้าหลัก</span>
+                            </a>
+                        </li>
 
-                    <li class="">
-                        <a href="./hairdresser_mg">
-                            <i class='bx bx-pie-chart-alt icon'></i>
-                            <span class="text nav-text">จัดการข้อมูลช่าง</span>
+                        <li class="">
+                            <a href="./hairdresser_mg">
+                                <i class='bx bx-pie-chart-alt icon'></i>
+                                <span class="text nav-text">จัดการข้อมูลช่าง</span>
 
-                        </a>
-                    </li>
+                            </a>
+                        </li>
 
 
-                    <li class="">
-                        <a href="./member_mg">
-                            <i class='bx bx-notepad icon '></i>
-                            <span class="text nav-text">จัดการข้อมูลลูกค้า</span>
-                        </a>
-                    </li>
+                        <li class="">
+                            <a href="./member_mg">
+                                <i class='bx bx-notepad icon '></i>
+                                <span class="text nav-text">จัดการข้อมูลลูกค้า</span>
+                            </a>
+                        </li>
+                </div>
 
-                </ul>
-            </div>
 
             <div class="bottom-content">
                 <li class="">
@@ -147,4 +145,3 @@ if(isset($_SESSION['key'])){
             }
         });
     </script>
-

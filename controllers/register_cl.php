@@ -14,7 +14,7 @@ if(isset($_POST['key']) && $_POST['key'] == 'form-signup'){
     $pass_user = $value['pass_user'];
     $e_mail = $value['e_mail'];
 
-    $sql_search = "SELECT * FROM `user` WHERE  tel_user = '$tel_user'";
+    $sql_search = "SELECT * FROM `user` WHERE  tel_user = '$tel_user' ";
 
     $row =  Database::query($sql_search,PDO::FETCH_OBJ)->fetch(PDO::FETCH_OBJ);
 
